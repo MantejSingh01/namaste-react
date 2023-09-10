@@ -27,3 +27,9 @@
 
 # extra to note down 
 - remove main config from package.json
+- jsx is defferent than react Both are very different.
+- jsx is convention where we merge the js with html.
+- jsx is not html in js
+- jsx is HTML like syntex. or XML like.
+- What is react fucntional component ? ==>> It is simple JS function === always starts with capital
+- fun() return reactElement is a functional component
