@@ -13,12 +13,12 @@
 - code splitting
 - defferential bundling - support older browsers
 - host app on https
-- Tree Shaking algo - will remove unsed code 
+- Tree Shaking algo - will remove unused code 
 - create different build for dev and prod
 # Package.js vs Pakage.lock.json
 - PJ will contain the version which will upgrade if it includs ^ (we can remove it to maintain the same version)
 - PLJ contain the actual version of dependency and all the other dependencies that package is depended on.
-- PJL contains the 
+
 
 # Node_modules
 - Contains the real data of the dependency

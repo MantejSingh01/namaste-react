@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./header";
 
 // const Parent = React.createElement(
 //     'h1',
@@ -25,7 +26,7 @@ const Title = () => (
     hello jsx 🚀
   </h1>
 );
-const number = 1000;
+// const number = 1000;
 // const title = <img src="x" onError={window.alert(document.cookies)}/>
 // React Components
 // Class based Components - Old way
@@ -34,13 +35,14 @@ const number = 1000;
 // fun() return reactElement is a functional component
 
 const HeadingComponenet = () => (
-  <div id="container">
-    {number - 100}
-    <h1 className="heading">Functional Components </h1>
-    <Title />
-    {Title()}
-    
-  </div>
+  <>
+    <Header />
+    <div id="container">
+  
+      <h1 className="heading">Functional Components </h1>
+      <Title />
+    </div>
+  </>
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading); this waas react element
