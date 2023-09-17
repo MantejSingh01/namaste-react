@@ -1,27 +1,41 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
 
-.heading{
+.heading {
     color: red;
 }
-.header-container{
+
+.header-container {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
-.user-icon{
+
+.user-icon {
     width: 50px;
     height: 50px;
     border-radius: 30px;
 }
-.logo{
+
+.logo {
     width: auto;
     height: 50px;
 }
-.input-box{
+
+.input-box {
     width: calc(30%);
     padding: 5px;
+}
+
+.nav-items>ul {
+    display: flex;
+
+}
+
+.nav-itemsul>li {
+    padding: 10px;
+    margin: 10px
 }

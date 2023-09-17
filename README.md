@@ -33,3 +33,23 @@
 - jsx is HTML like syntex. or XML like.
 - What is react fucntional component ? ==>> It is simple JS function === always starts with capital
 - fun() return reactElement is a functional component
+
+# React Hooks
+- can we do default and named exports in the same component.
+- they normal JS func written by FB developer.
+- written in the react.
+- useState() => superpowerfull react variable.
+- useEffect() => 
+
+
+- when ever a state varibale changes then react re-render the components
+# React 16 (React Fiber) 2016 
+- React is the super power for DOM manipulation
+-Reconcilation ALgo (React fiber)
+- Vertual dom is representation of actual DOM 
+-  it the react object which react return and then it is destructured . React create the object (React Vertual DOM)
+-  it is nothing but normal javascript object
+- Actual dom contains div or tag structire.
+- DIFF Algo
+-  it finds out the difference btw updated vertual DOM and Previois Vertual DOM.
+-  
