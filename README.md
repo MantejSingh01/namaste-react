@@ -53,7 +53,3 @@
 - DIFF Algo
 - it finds out the difference btw updated virtual DOM and Previois virtual DOM.(the virtual old dom object and virtual new dom object )
 
-
-extra
-
--  
