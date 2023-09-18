@@ -45,11 +45,15 @@
 - when ever a state varibale changes then react re-render the components
 # React 16 (React Fiber) 2016 
 - React is the super power for DOM manipulation
--Reconcilation ALgo (React fiber)
-- Vertual dom is representation of actual DOM 
--  it the react object which react return and then it is destructured . React create the object (React Vertual DOM)
--  it is nothing but normal javascript object
+- Reconcilation ALgo (React fiber)
+- virtual dom is representation of actual DOM 
+- it the react object which react return and then it is destructured . React create the object (React virtual DOM)
+- it is nothing but normal javascript object
 - Actual dom contains div or tag structire.
 - DIFF Algo
--  it finds out the difference btw updated vertual DOM and Previois Vertual DOM.
+- it finds out the difference btw updated virtual DOM and Previois virtual DOM.(the virtual old dom object and virtual new dom object )
+
+
+extra
+
 -  
