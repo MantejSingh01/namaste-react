@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestroCards from "./RestoCards";
-import {DATA} from "../utils/fakeData";
+import Shimmer from "./Shimmer";
+// import { DATA } from "../utils/fakeData";
+
 
 const Container = () => {
-  const [response, setResponse] = useState(DATA);
+  const [response, setResponse] = useState([]);
 
   // Normal JS variable
   // let response = DATA;
+
+ 
+  useEffect(() => {
+    getRestoData();
+  }, []);
+
+  const getRestoData = async () => {
+    const data = await fetch("http://localhost:3000/zomato");
+    const res = await data.json();
+
+    setResponse(res);
+  };
 
   const topRated = () => {
     let filteredResults = response.filter(
@@ -14,6 +28,10 @@ const Container = () => {
     );
     setResponse(filteredResults);
   };
+
+  if (response.length === 0) {
+    return <Shimmer/>
+  }
 
   return (
     <div className="body">
@@ -27,6 +45,7 @@ const Container = () => {
       <div className="res-container">
         {response.map((values, index) => (
           <RestroCards
+            key={values.info.resId}
             ind={values.info.resId}
             img={values.info.image}
             name={values.info.name}
@@ -38,4 +57,4 @@ const Container = () => {
     </div>
   );
 };
-  export default Container;
+export default Container;

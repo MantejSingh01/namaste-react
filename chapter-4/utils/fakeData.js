@@ -1,4 +1,4 @@
-export const DATA = [
+ const DATA = [
     {
         "type": "restaurant",
         "info": {
@@ -1775,3 +1775,5 @@ export const DATA = [
         ]
     }
 ]
+
+module.exports = DATA;

@@ -1,4 +1,4 @@
-
+import { LOGO_URL, USER_URL } from "../utils/constant";
 
 const Header = () => {
     return (
@@ -6,7 +6,7 @@ const Header = () => {
         <div className="logo-conatiner">
           <img
             className="logo"
-            src="https://png.pngtree.com/png-clipart/20230106/original/pngtree-simple-and-modern-food-logo-vector-design-png-image_8876455.png"
+            src={LOGO_URL}
             alt="Namaste React 🚀"
           />
         </div>
@@ -29,7 +29,7 @@ const Header = () => {
         <div className="user-icon-container">
           <img
             className="user-icon"
-            src="https://yt3.ggpht.com/yti/AOXPAcWeJWIMnGxkFrNzOOEVpHpcAepEtVK1z1rlqSQq=s88-c-k-c0x00ffffff-no-rj-mo"
+            src={USER_URL}
             alt="MS"
           />
         </div>
