@@ -35,7 +35,7 @@
 .nav-items>ul>li {
     padding: 10px;
     margin: 10px;
-    font-size: 24px;
+    font-size: 22px;
 }
 .body{
     margin: 20px;
@@ -79,6 +79,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
+
 
 .res-card:hover::after {
     content: "";
@@ -137,7 +138,7 @@
     font-size: 14px;
 
 }
-.top-rated-btn:hover{
+.top-rated-btn, .login-btn button,.search-btn:hover{
    
     background-color: rgb(224, 53, 70);
 
@@ -168,4 +169,86 @@
     100% {
       background-position: 200% 0;
     }
+  }
+  .search-input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 15px 0px 0px 15px;
+    border-color: #0000001f;
+  }
+  .search-container{
+    margin-left: 10px;
+    width: 350px;
+    display: flex
+  }
+  .top-rated-resto{
+    display: flex;
+    align-items: center;
+  }
+  .search-btn{
+    padding: 10px 20px;
+    background-color: rgb(224, 53, 70);
+    border: 2px solid rgb(239, 79, 95);
+    color: rgb(255, 255, 255);
+    background-color: rgb(239, 79, 95);
+    box-shadow: rgba(54, 54, 54, 0.06) 0px 1px 2px;
+  }
+  .login-btn{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+ 
+  }
+  .login-btn button{
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-color: #0000001f;
+    background: #ef4f5f;
+    border: 1px solid #ef4f5f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .nav-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bar-container{
+  
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .nav-items>ul>li>a{
+    text-decoration: none;
+  }
+  a:visited {
+    color: #3d4152; /* Set the color to blue for both unvisited and visited links */
+  }
+
+  .nav-items>ul>li>a:hover{
+    text-decoration: none;
+    color: #ef4f5f;
+  }
+  input:focus-visible {
+    outline: none; /* Remove the outline (or customize it as needed) */
+    /* Add any other styles you want for focused input elements */
+  }
+  .link-custom-style {
+    color: inherit; /* Use the default link color */
+    
+    text-decoration: none; /* Remove underline */
+  }
+  .isPromoted{
+    color: #fff;
+    background-color: #ef4f5f;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    z-index: 1;
+    position: absolute;
   }

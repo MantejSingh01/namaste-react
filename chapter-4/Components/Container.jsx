@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
 import RestroCards from "./RestoCards";
 import Shimmer from "./Shimmer";
+import Search from "./Search";
+import { Link } from "react-router-dom";
+import useRestoData from "../utils/useRestoData";
+import withPromotedLabel from "../utils/withPromotedLabel";
+import { useContext } from "react";
+import UserContext from "../utils/userContext";
+
 // import { DATA } from "../utils/fakeData";
 
-
 const Container = () => {
-  const [response, setResponse] = useState([]);
-
   // Normal JS variable
   // let response = DATA;
+  const [response, setResponse] = useRestoData();
+  //
+  // getting data from userContext Api
 
- 
-  useEffect(() => {
-    getRestoData();
-  }, []);
+  const {loggedInUser,setUserName,val} = useContext(UserContext);
+  console.log(loggedInUser,setUserName,val);
 
-  const getRestoData = async () => {
-    const data = await fetch("http://localhost:3000/zomato");
-    const res = await data.json();
+  // passing value to HOF
+  const NewPromotedRestroComp = withPromotedLabel(RestroCards);
 
-    setResponse(res);
+  const filterResto = (text) => {
+    if (text == "") return;
+
+    let val = response.filter((item, index) => {
+      return item?.info?.name.toLowerCase().includes(text.toLowerCase());
+    });
+    if (val.length) setResponse(val);
+    // else will show toast
   };
 
   const topRated = () => {
@@ -30,7 +41,7 @@ const Container = () => {
   };
 
   if (response.length === 0) {
-    return <Shimmer/>
+    return <Shimmer />;
   }
 
   return (
@@ -40,18 +51,35 @@ const Container = () => {
         <button className="top-rated-btn" onClick={() => topRated()}>
           Top Rated Restaurants
         </button>
+        <Search filterResto={filterResto} />
       </div>
 
       <div className="res-container">
         {response.map((values, index) => (
-          <RestroCards
+          <Link
+            to={"/restoDetail" + values.cardAction.clickUrl}
             key={values.info.resId}
-            ind={values.info.resId}
-            img={values.info.image}
-            name={values.info.name}
-            rating={values.info.rating.aggregate_rating}
-            cft={values.info.cft}
-          />
+            className="link-custom-style"
+          >
+            {values.isPromoted == true ? (
+              <NewPromotedRestroComp
+                ind={values.info.resId}
+                img={values.info.image}
+                name={values.info.name}
+                rating={values.info.rating.aggregate_rating}
+                cft={values.info.cft}
+              />
+            ) : (
+              <RestroCards
+              
+                ind={values.info.resId}
+                img={values.info.image}
+                name={values.info.name}
+                rating={values.info.rating.aggregate_rating}
+                cft={values.info.cft}
+              />
+            )}
+          </Link>
         ))}
       </div>
     </div>

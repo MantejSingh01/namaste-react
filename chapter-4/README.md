@@ -33,3 +33,24 @@
 - jsx is HTML like syntex. or XML like.
 - What is react fucntional component ? ==>> It is simple JS function === always starts with capital
 - fun() return reactElement is a functional component
+
+
+
+
+# controlled and uncontrolled component
+
+- if a component's state is controlled by parent then it is controlled component
+- if it controlling itself then it is a uncontrolled component. 
+
+
+# Context API
+
+- to create a context we use createContext 
+
+# Redux toolkit
+- install RTK library, react-reduc
+- Build our store
+- connect our store to app
+- will create cart slice
+- dispatch() an action 
+- Read the data using selectot

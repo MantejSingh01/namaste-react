@@ -111,7 +111,7 @@
             "clickActionDeeplink": ""
         },
         "distance": "885 m",
-        "isPromoted": false,
+        "isPromoted": true,
         "promotedText": "",
         "trackingData": [
             {
@@ -551,7 +551,7 @@
             "clickActionDeeplink": ""
         },
         "distance": "3.7 km",
-        "isPromoted": false,
+        "isPromoted": true,
         "promotedText": "",
         "trackingData": [
             {
@@ -1608,7 +1608,7 @@
             "clickActionDeeplink": ""
         },
         "distance": "2.7 km",
-        "isPromoted": false,
+        "isPromoted": true,
         "promotedText": "",
         "trackingData": [
             {
