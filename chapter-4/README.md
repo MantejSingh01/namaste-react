@@ -54,3 +54,30 @@
 - will create cart slice
 - dispatch() an action 
 - Read the data using selectot
+
+
+# usereducer Hook
+- also a hook which takes a reducer fuction (which further can contain switch cases) and initial state.
+- eg 
+- const initialState = 0; // Initial state
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+};
+const [state, dispatch] = useReducer(reducer, initialState);
+return (
+  <!-- <div>
+    <p>Count: {state}</p>
+    <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+    <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+  </div>
+); -->
+
+# nanoid provided by RTK
+- prepare

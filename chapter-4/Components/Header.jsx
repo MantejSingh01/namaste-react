@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { LOGO_URL, USER_URL } from "../utils/constant";
 import { useContext, useState } from "react";
 import UserContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Use a boolean for login state
 
   const {loggedInUser,setUserName,val} = useContext(UserContext);
-  console.log(loggedInUser,setUserName,val);
+  const item = useSelector(store=> store.cart.items)
 
   
 
@@ -29,14 +30,14 @@ const Header = () => {
               <Link to="/contact">Contact Us</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link> {/* Updated Link */}
+              <Link to="/cart">Cart <span>{item.length}</span></Link> 
             </li>
           </ul>
         </div>
         <div className="login-btn">
           <button
             onClick={() => {
-              setIsLoggedIn((prev) => !prev); // Toggle the login state
+              setIsLoggedIn((prev) => !prev);// Toggle the login state
             }}
           >
             {isLoggedIn ? loggedInUser : loggedInUser} {/* Use a conditional rendering */}

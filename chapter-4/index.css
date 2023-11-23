@@ -252,3 +252,26 @@
     z-index: 1;
     position: absolute;
   }
+
+  .on{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+
+  .mainDemo{
+    display: flex;
+    flex-wrap: wrap;
+  
+    justify-content: center;
+    flex-direction: column-reverse;
+   
+    margin: 50px;
+    align-items: center;
+  }
+  .mainDemo span{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }

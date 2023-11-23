@@ -14,6 +14,7 @@ function Search(props) {
     <div className="search-container">
       <input
         className="search-input"
+        data-testid = "searchbox"
         type="search"
         placeholder="Search here ..."
         value={textSearched}

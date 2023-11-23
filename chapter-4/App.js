@@ -7,30 +7,39 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestoMenu from "./Components/RestoMenu";
+import DemoUseMemo from "./Components/DemoUseMemo";
 import AboutClass from "./Components/AboutClass";
 import Shimmer from "./Components/Shimmer";
 import RestroCategory from "./Components/RestroCategory";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./Redux/reducStore";
+import Cart from "./Components/Cart";
+import { useGetZomatoDataQuery } from "./Redux/zomatoSlice";
+import DemoRef from "./Components/DemoRef";
 
 const About = lazy(() => import("./Components/About"));
 // import Header from "./header";
 
 const AppLayout = () => {
-
-  const [userName, setUserName] = useState('');
-const val = "help"
-  useEffect(()=>{
-    setUserName("Nikhil")
-  },[])
+  const [userName, setUserName] = useState("");
+  const val = "help";
+  useEffect(() => {
+    setUserName("Nikhil");
+  }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser:userName,setUserName,val }}>
-      <div className="app">
-      <UserContext.Provider value={{ loggedInUser:'Akul' }}>
-        <Header />
-        </UserContext.Provider>
-        <Outlet />
-      </div>
+    <Provider store={store}>
+      <UserContext.Provider
+        value={{ loggedInUser: userName, setUserName, val }}
+      >
+        <div className="app">
+          {/* <UserContext.Provider value={{ loggedInUser: "Akul" }}> */}
+            <Header />
+          {/* </UserContext.Provider> */}
+          <Outlet />
+        </div>
       </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -67,6 +76,21 @@ const appRouter = createBrowserRouter([
         path: "/restoDetail/:location/:resId/:order",
         element: <RestoMenu />,
       },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+         path: "/demoMemo",
+      element: <DemoUseMemo />,
+
+      }
+      ,
+      {
+         path: "/demoRef",
+      element: <DemoRef />,
+
+      }
     ],
   },
 ]);

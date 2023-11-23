@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import { addItem } from "../Redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestroItems = ({ items }) => {
   //   const [item, setItem] = useState([]);
   console.log(items);
+  const reducer = useDispatch()
 
   return (
     <div>
@@ -20,6 +23,7 @@ const RestroItems = ({ items }) => {
             <div>{item.item.price}</div>
             <div>{item.item.desc}</div>
             </div>
+            <button onClick={()=>{reducer(addItem(item))}} >ADD</button>
           </div>
         ));
       })}

@@ -7,6 +7,8 @@ import useRestoData from "../utils/useRestoData";
 import withPromotedLabel from "../utils/withPromotedLabel";
 import { useContext } from "react";
 import UserContext from "../utils/userContext";
+import { useGetZomatoDataQuery } from "../Redux/zomatoSlice";
+import { useSelector } from "react-redux";
 
 // import { DATA } from "../utils/fakeData";
 
@@ -14,11 +16,15 @@ const Container = () => {
   // Normal JS variable
   // let response = DATA;
   const [response, setResponse] = useRestoData();
-  //
+  // const {data, error, isLoading} = useGetZomatoDataQuery();
+  const value = useSelector((state)=> state.ZomatoApi)
+
+  // console.log(data,error,isLoading,"=================")
+  // console.log(value,"-===--")
+
   // getting data from userContext Api
 
   const {loggedInUser,setUserName,val} = useContext(UserContext);
-  console.log(loggedInUser,setUserName,val);
 
   // passing value to HOF
   const NewPromotedRestroComp = withPromotedLabel(RestroCards);
